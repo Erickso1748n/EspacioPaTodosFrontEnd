@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#091329">
+    <title>Crear cuenta — EspacioPaTodos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <script src="js/auth.js" defer></script>
+</head>
+
+<body>
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+    <header class="encabezado">
+        <a href="index.html" class="logo" aria-label="EspacioPaTodos, volver al inicio">
+            <svg class="logo-alien" viewBox="-70 -140 140 200" aria-hidden="true">
+                <path d="M-22,-76 Q-34,-112 -52,-126 M22,-76 Q34,-112 52,-126" stroke="#6FF2A9" stroke-width="9" fill="none" stroke-linecap="round"/>
+                <path d="M0,-88 C58,-88 82,-34 58,16 C42,50 -42,50 -58,16 C-82,-34 -58,-88 0,-88Z" fill="#6FF2A9"/>
+                <ellipse cx="-30" cy="-8" rx="15" ry="24" transform="rotate(20 -30 -8)" fill="#091329"/>
+                <ellipse cx="30" cy="-8" rx="15" ry="24" transform="rotate(-20 30 -8)" fill="#091329"/>
+            </svg>
+            <span>Espacio<b>PaTodos</b></span>
+        </a>
+        <a class="boton-login" href="index.html">Volver al inicio</a>
+    </header>
+
+    <main class="auth" id="contenido">
+        <aside class="auth-lado">
+            <svg class="auth-alien" viewBox="-90 -150 180 260" role="img" aria-label="Un alienígena verde y amable que sonríe.">
+                <defs>
+                    <linearGradient id="gVerde" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0" stop-color="#9CFFC8"/>
+                        <stop offset="1" stop-color="#4FD68F"/>
+                    </linearGradient>
+                </defs>
+                <g class="alien">
+                    <path d="M-22,-76 Q-34,-112 -52,-126" stroke="#6FF2A9" stroke-width="5" fill="none" stroke-linecap="round"/>
+                    <path d="M22,-76 Q34,-112 52,-126" stroke="#6FF2A9" stroke-width="5" fill="none" stroke-linecap="round"/>
+                    <circle class="punta" cx="-52" cy="-126" r="8" fill="#6FF2A9"/>
+                    <circle class="punta punta-b" cx="52" cy="-126" r="8" fill="#6FF2A9"/>
+                    <ellipse cx="0" cy="78" rx="26" ry="30" fill="#45C987"/>
+                    <path d="M-24,68 Q-44,78 -46,96" stroke="#45C987" stroke-width="9" fill="none" stroke-linecap="round"/>
+                    <path d="M24,66 Q50,64 56,46" stroke="#45C987" stroke-width="9" fill="none" stroke-linecap="round"/>
+                    <path d="M0,-88 C58,-88 82,-34 58,16 C42,50 -42,50 -58,16 C-82,-34 -58,-88 0,-88Z" fill="url(#gVerde)"/>
+                    <g class="ojos">
+                        <ellipse cx="-30" cy="-8" rx="15" ry="24" transform="rotate(20 -30 -8)" fill="#0B1B2B"/>
+                        <ellipse cx="30" cy="-8" rx="15" ry="24" transform="rotate(-20 30 -8)" fill="#0B1B2B"/>
+                        <circle cx="-34" cy="-20" r="5" fill="#fff"/>
+                        <circle cx="26" cy="-20" r="5" fill="#fff"/>
+                    </g>
+                    <path d="M-9,30 Q0,38 9,30" stroke="#0B1B2B" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+                    <ellipse cx="-42" cy="24" rx="8" ry="5" fill="#B5A0FF" opacity=".55"/>
+                    <ellipse cx="42" cy="24" rx="8" ry="5" fill="#B5A0FF" opacity=".55"/>
+                    <path d="M0,8 C-14,-4 -8,-14 0,-8 C8,-14 14,-4 0,8Z" transform="translate(60 36) scale(1.3)" fill="#B5A0FF"/>
+                </g>
+            </svg>
+
+            <p class="auth-frase">Solo pedimos lo necesario.</p>
+            <p class="auth-apoyo">
+                Un nombre de usuario, un correo y una contraseña. No tienes que
+                contarnos nada personal ni difícil para entrar. Puedes usar un
+                apodo en lugar de tu nombre real.
+            </p>
+        </aside>
+
+        <section class="auth-formulario" aria-labelledby="titulo-registro">
+            <h1 id="titulo-registro">Crear cuenta</h1>
+            <p class="auth-intro">Te toma un minuto. Todos los campos son obligatorios.</p>
+
+            <form id="form-registro" novalidate>
+                <div class="campo">
+                    <label for="usuario">Nombre de usuario</label>
+                    <input type="text" id="usuario" name="usuario" autocomplete="username"
+                           data-validar="usuario" aria-describedby="usuario-ayuda usuario-error" maxlength="20">
+                    <p class="campo-ayuda" id="usuario-ayuda">De 3 a 20 caracteres: letras, números o guion bajo (_).</p>
+                    <p class="campo-error" id="usuario-error"></p>
+                </div>
+
+                <div class="campo">
+                    <label for="correo">Correo electrónico</label>
+                    <input type="email" id="correo" name="correo" autocomplete="email"
+                           data-validar="correo" aria-describedby="correo-error" maxlength="254">
+                    <p class="campo-error" id="correo-error"></p>
+                </div>
+
+                <div class="campo">
+                    <label for="contrasena">Contraseña</label>
+                    <div class="campo-clave">
+                        <input type="password" id="contrasena" name="contrasena" autocomplete="new-password"
+                               data-validar="contrasena" aria-describedby="reglas-clave contrasena-error" maxlength="64">
+                        <button type="button" class="ver-contrasena" data-objetivo="contrasena" aria-pressed="false">Mostrar</button>
+                    </div>
+
+                    <ul class="reglas-clave" id="reglas-clave">
+                        <li data-regla="longitud">Entre 8 y 64 caracteres</li>
+                        <li data-regla="letra">Al menos una letra</li>
+                        <li data-regla="numero">Al menos un número</li>
+                    </ul>
+                    <p class="campo-error" id="contrasena-error"></p>
+                </div>
+
+                <div class="campo">
+                    <label for="confirmar">Repite la contraseña</label>
+                    <div class="campo-clave">
+                        <input type="password" id="confirmar" name="confirmar" autocomplete="new-password"
+                               data-validar="confirmar" aria-describedby="confirmar-error" maxlength="64">
+                        <button type="button" class="ver-contrasena" data-objetivo="confirmar" aria-pressed="false">Mostrar</button>
+                    </div>
+                    <p class="campo-error" id="confirmar-error"></p>
+                </div>
+
+                <button type="submit" class="boton-principal boton-formulario">Crear mi cuenta</button>
+
+                <p class="estado" id="estado" role="status" tabindex="-1"></p>
+            </form>
+
+            <p class="auth-cambio">¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+        </section>
+    </main>
+</body>
+</html>

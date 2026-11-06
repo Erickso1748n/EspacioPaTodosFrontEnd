@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#091329">
+    <meta name="description" content="EspacioPaTodos: orientación, recursos y apoyo para cuidar tu bienestar emocional, sin juicios y a tu ritmo.">
+
+    <title>EspacioPaTodos — Aquí no estás solo ni sola</title>
+
+    <!-- Tipografías: Bricolage Grotesque (titulares) y Atkinson Hyperlegible (texto, diseñada para leerse fácil) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+    <!-- Franja superior -->
+    <div class="barra-senal">
+        <span class="barra-punto" aria-hidden="true"></span>
+        Señal recibida: alguien del otro lado de la pantalla piensa en ti.
+    </div>
+
+    <!-- Encabezado -->
+    <header class="encabezado">
+        <a href="#inicio" class="logo" aria-label="EspacioPaTodos, ir al inicio">
+            <svg class="logo-alien" viewBox="-70 -140 140 200" aria-hidden="true">
+                <path d="M-22,-76 Q-34,-112 -52,-126 M22,-76 Q34,-112 52,-126" stroke="#6FF2A9" stroke-width="9" fill="none" stroke-linecap="round"/>
+                <path d="M0,-88 C58,-88 82,-34 58,16 C42,50 -42,50 -58,16 C-82,-34 -58,-88 0,-88Z" fill="#6FF2A9"/>
+                <ellipse cx="-30" cy="-8" rx="15" ry="24" transform="rotate(20 -30 -8)" fill="#091329"/>
+                <ellipse cx="30" cy="-8" rx="15" ry="24" transform="rotate(-20 30 -8)" fill="#091329"/>
+            </svg>
+            <span>Espacio<b>PaTodos</b></span>
+        </a>
+
+        <button class="menu-boton" type="button" aria-expanded="false" aria-controls="menu">
+            <span class="menu-boton-texto">Menú</span>
+        </button>
+
+        <div class="menu" id="menu">
+            <nav class="navegacion" aria-label="Navegación principal">
+                <a href="#inicio" aria-current="true">Inicio</a>
+                <a href="#nosotros">Sobre nosotros</a>
+                <a href="#explorar">Explorar</a>
+                <a href="#recursos">Recursos</a>
+            </nav>
+
+            <div class="acciones-cuenta">
+                <a class="boton-login" href="login.html">Iniciar sesión</a>
+                <a class="boton-registro" href="registro.html">Crear cuenta</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="contenido">
+
+        <!-- PORTADA -->
+        <section class="hero" id="inicio">
+            <div class="hero-texto">
+                <h1>No todas las batallas hacen ruido.</h1>
+
+                <svg class="onda" viewBox="0 0 400 40" aria-hidden="true" preserveAspectRatio="none">
+                    <path d="M0,20 C20,20 25,4 45,4 C65,4 70,36 90,36 C110,36 115,12 135,12 C155,12 160,28 180,28 C200,28 205,18 225,18 C245,18 250,24 270,24 L400,20" />
+                </svg>
+
+                <p class="descripcion-hero">
+                    A veces te sientes de otro planeta y no sabes cómo explicarlo.
+                    Aquí encontrarás orientación y recursos para entender lo que
+                    sientes, a tu ritmo y sin que nadie te juzgue.
+                </p>
+
+                <div class="hero-acciones">
+                    <a href="#explorar" class="boton-principal">Empieza a explorar</a>
+                    <a href="registro.html" class="boton-contorno">Crear cuenta</a>
+                </div>
+
+                <p class="nota-hero">No necesitas tener todo resuelto hoy.</p>
+            </div>
+
+            <div class="escena">
+                <svg viewBox="0 0 500 520" role="img" aria-label="Un alienígena verde y amable flota dentro de una luna creciente, rodeado de estrellas, y sostiene un corazón.">
+                    <defs>
+                        <radialGradient id="gBrillo" cx="50%" cy="50%" r="50%">
+                            <stop offset="0" stop-color="#6FF2A9" stop-opacity=".30"/>
+                            <stop offset=".6" stop-color="#B5A0FF" stop-opacity=".12"/>
+                            <stop offset="1" stop-color="#B5A0FF" stop-opacity="0"/>
+                        </radialGradient>
+                        <linearGradient id="gLuna" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0" stop-color="#E4DAFF"/>
+                            <stop offset="1" stop-color="#B5A0FF"/>
+                        </linearGradient>
+                        <linearGradient id="gVerde" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="#9CFFC8"/>
+                            <stop offset="1" stop-color="#4FD68F"/>
+                        </linearGradient>
+                        <linearGradient id="gPlaneta" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0" stop-color="#A8D7FF"/>
+                            <stop offset="1" stop-color="#76A7FF"/>
+                        </linearGradient>
+                        <mask id="mLuna">
+                            <rect width="500" height="520" fill="#fff"/>
+                            <circle cx="345" cy="240" r="150" fill="#000"/>
+                        </mask>
+                    </defs>
+
+                    <circle cx="260" cy="260" r="250" fill="url(#gBrillo)"/>
+
+                    <!-- Luna creciente -->
+                    <circle cx="260" cy="270" r="175" fill="url(#gLuna)" mask="url(#mLuna)"/>
+                    <circle cx="140" cy="300" r="14" fill="#9D86EE" opacity=".55"/>
+                    <circle cx="170" cy="190" r="9" fill="#9D86EE" opacity=".55"/>
+                    <circle cx="185" cy="372" r="11" fill="#9D86EE" opacity=".55"/>
+
+                    <!-- Estrellas -->
+                    <g fill="#F5F5FF">
+                        <path class="brillo" d="M0,-10 L2.5,-2.5 L10,0 L2.5,2.5 L0,10 L-2.5,2.5 L-10,0 L-2.5,-2.5Z" transform="translate(60 80)"/>
+                        <path class="brillo brillo-b" d="M0,-10 L2.5,-2.5 L10,0 L2.5,2.5 L0,10 L-2.5,2.5 L-10,0 L-2.5,-2.5Z" transform="translate(440 90) scale(.8)" fill="#A8D7FF"/>
+                        <path d="M0,-10 L2.5,-2.5 L10,0 L2.5,2.5 L0,10 L-2.5,2.5 L-10,0 L-2.5,-2.5Z" transform="translate(470 250) scale(.55)" fill="#6FF2A9"/>
+                        <path class="brillo brillo-c" d="M0,-10 L2.5,-2.5 L10,0 L2.5,2.5 L0,10 L-2.5,2.5 L-10,0 L-2.5,-2.5Z" transform="translate(70 450) scale(.7)"/>
+                        <circle cx="300" cy="40" r="2.5"/>
+                        <circle cx="405" cy="500" r="2"/>
+                        <circle cx="30" cy="230" r="2"/>
+                    </g>
+
+                    <!-- Planeta pequeño con anillo -->
+                    <ellipse cx="430" cy="410" rx="34" ry="9" transform="rotate(-20 430 410)" fill="none" stroke="#B5A0FF" stroke-width="3" opacity=".7"/>
+                    <circle cx="430" cy="410" r="17" fill="url(#gPlaneta)"/>
+
+                    <!-- Alienígena -->
+                    <g transform="translate(345 250)">
+                        <g class="alien">
+                            <path class="antena" d="M-22,-76 Q-34,-112 -52,-126" stroke="#6FF2A9" stroke-width="5" fill="none" stroke-linecap="round"/>
+                            <path class="antena" d="M22,-76 Q34,-112 52,-126" stroke="#6FF2A9" stroke-width="5" fill="none" stroke-linecap="round"/>
+                            <circle class="punta" cx="-52" cy="-126" r="8" fill="#6FF2A9"/>
+                            <circle class="punta punta-b" cx="52" cy="-126" r="8" fill="#6FF2A9"/>
+
+                            <ellipse cx="0" cy="78" rx="26" ry="30" fill="#45C987"/>
+                            <path d="M-24,68 Q-44,78 -46,96" stroke="#45C987" stroke-width="9" fill="none" stroke-linecap="round"/>
+                            <path d="M24,66 Q50,64 56,46" stroke="#45C987" stroke-width="9" fill="none" stroke-linecap="round"/>
+
+                            <path d="M0,-88 C58,-88 82,-34 58,16 C42,50 -42,50 -58,16 C-82,-34 -58,-88 0,-88Z" fill="url(#gVerde)"/>
+
+                            <g class="ojos">
+                                <ellipse cx="-30" cy="-8" rx="15" ry="24" transform="rotate(20 -30 -8)" fill="#0B1B2B"/>
+                                <ellipse cx="30" cy="-8" rx="15" ry="24" transform="rotate(-20 30 -8)" fill="#0B1B2B"/>
+                                <circle cx="-34" cy="-20" r="5" fill="#fff"/>
+                                <circle cx="26" cy="-20" r="5" fill="#fff"/>
+                            </g>
+                            <path d="M-9,30 Q0,38 9,30" stroke="#0B1B2B" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+                            <ellipse cx="-42" cy="24" rx="8" ry="5" fill="#B5A0FF" opacity=".55"/>
+                            <ellipse cx="42" cy="24" rx="8" ry="5" fill="#B5A0FF" opacity=".55"/>
+
+                            <path d="M0,8 C-14,-4 -8,-14 0,-8 C8,-14 14,-4 0,8Z" transform="translate(60 36) scale(1.3)" fill="#B5A0FF"/>
+                        </g>
+                    </g>
+                </svg>
+
+                <button class="alien-boton" type="button" aria-label="Escuchar otro mensaje del alien" aria-describedby="burbuja"></button>
+
+                <p class="burbuja" id="burbuja" aria-live="polite">
+                    Hola, terrícola. Hoy no tienes que estar bien.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- SOBRE NOSOTROS -->
+        <section class="nosotros" id="nosotros">
+            <div class="nosotros-texto">
+                <h2>A veces te sientes de otro planeta. Aquí hablamos tu idioma.</h2>
+
+                <p>
+                    EspacioPaTodos nació como un proyecto escolar con una idea sencilla:
+                    las dificultades emocionales no siempre se ven, y buscar información
+                    o pedir apoyo puede ser un primer paso muy valioso.
+                </p>
+                <p>
+                    Somos un espacio de información y orientación. No diagnosticamos
+                    ni sustituimos a psicólogos, terapeutas u otros profesionales.
+                </p>
+            </div>
+
+            <div class="traductor">
+                <h3>Traductor humano-alien</h3>
+                <p class="traductor-intro">
+                    Los humanos decimos cosas que significan otras. Elige una frase:
+                </p>
+
+                <div class="traductor-frases" role="group" aria-label="Frases para traducir">
+                    <button type="button" class="chip" data-frase="0" aria-pressed="false">«Estoy bien»</button>
+                    <button type="button" class="chip" data-frase="1" aria-pressed="false">«No pasa nada»</button>
+                    <button type="button" class="chip" data-frase="2" aria-pressed="false">«Estoy cansado/a»</button>
+                    <button type="button" class="chip" data-frase="3" aria-pressed="false">«Déjalo, no importa»</button>
+                </div>
+
+                <div class="traductor-resultado" aria-live="polite">
+                    <p class="traductor-etiqueta">A veces también significa:</p>
+                    <p class="traductor-texto" id="traductor-texto">Elige una frase para ver su traducción.</p>
+                </div>
+
+                <p class="traductor-nota">
+                    Es solo una pista, no un diagnóstico. Nadie sabe mejor que tú lo que quieres decir.
+                </p>
+            </div>
+        </section>
+
+        <!-- EXPLORAR: MAPA ESTELAR -->
+        <section class="explorar" id="explorar">
+            <div class="explorar-cabecera">
+                <h2>¿Qué está ocupando tu mente últimamente?</h2>
+                <p>
+                    Cada planeta es un tema. Toca el que se parezca a lo que vives;
+                    no tienes que ponerlo todo en palabras.
+                </p>
+            </div>
+
+            <div class="mapa">
+                <svg class="mapa-lineas" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                    <polyline points="10,62 27,22 45,66 62,24 79,64 92,26" />
+                </svg>
+
+                <button type="button" class="astro" data-tema="emociones" aria-pressed="false" aria-controls="panel-tema"
+                        style="--x:10%; --y:62%; --t:5.4rem; --c1:#E4DAFF; --c2:#B5A0FF;">
+                    <span class="astro-bola"></span>
+                    <span class="astro-nombre">Emociones y días difíciles</span>
+                </button>
+
+                <button type="button" class="astro" data-tema="duelo" aria-pressed="false" aria-controls="panel-tema"
+                        style="--x:27%; --y:22%; --t:4.2rem; --c1:#C8E8FF; --c2:#76A7FF;">
+                    <span class="astro-bola"></span>
+                    <span class="astro-nombre">Duelo y pérdida</span>
+                </button>
+
+                <button type="button" class="astro" data-tema="bullying" aria-pressed="false" aria-controls="panel-tema"
+                        style="--x:45%; --y:66%; --t:6.4rem; --c1:#9CFFC8; --c2:#2FAE78;">
+                    <span class="astro-bola"></span>
+                    <span class="astro-nombre">Bullying y convivencia</span>
+                </button>
+
+                <button type="button" class="astro" data-tema="autocuidado" aria-pressed="false" aria-controls="panel-tema"
+                        style="--x:62%; --y:24%; --t:4.8rem; --c1:#F5F5FF; --c2:#A8D7FF;">
+                    <span class="astro-bola"></span>
+                    <span class="astro-nombre">Autocuidado y autoestima</span>
+                </button>
+
+                <button type="button" class="astro" data-tema="familia" aria-pressed="false" aria-controls="panel-tema"
+                        style="--x:79%; --y:64%; --t:4.6rem; --c1:#D9C9FF; --c2:#7D62E0;">
+                    <span class="astro-bola"></span>
+                    <span class="astro-nombre">Problemas personales y familiares</span>
+                </button>
+
+                <button type="button" class="astro" data-tema="estres" aria-pressed="false" aria-controls="panel-tema"
+                        style="--x:92%; --y:26%; --t:3.8rem; --c1:#B8FFE0; --c2:#4FD68F;">
+                    <span class="astro-bola"></span>
+                    <span class="astro-nombre">Estrés y presión escolar</span>
+                </button>
+            </div>
+
+            <div class="panel-tema" id="panel-tema" aria-live="polite">
+                <p class="panel-vacio">Elige un planeta del mapa para ver una primera guía.</p>
+            </div>
+        </section>
+
+        <!-- TRANSMISIONES (frases) -->
+        <section class="transmisiones" id="frases" aria-label="Frases de acompañamiento">
+            <blockquote class="transmision-grande">
+                No tienes que estar bien todo el tiempo para merecer cariño, respeto y apoyo.
+            </blockquote>
+
+            <div class="transmisiones-lista">
+                <blockquote>Sentir mucho no es un defecto de fábrica.</blockquote>
+                <blockquote>Hoy puede bastar con terminar el día.</blockquote>
+                <blockquote>Pedir ayuda también es avanzar.</blockquote>
+                <blockquote>No necesitas tener todo resuelto hoy.</blockquote>
+            </div>
+        </section>
+
+        <!-- RECURSOS -->
+        <section class="recursos" id="recursos">
+            <div class="recursos-intro">
+                <h2>No tienes que hacerlo a solas.</h2>
+                <p>
+                    Hablar con alguien de confianza o con un profesional puede ser
+                    el primer paso para encontrar apoyo y nuevas herramientas.
+                    Estas son algunas guías breves para empezar.
+                </p>
+            </div>
+
+            <div class="recursos-lista">
+                <details>
+                    <summary>Cómo expresar lo que sientes</summary>
+                    <p>
+                        No hace falta explicarlo perfecto. Puedes empezar con frases como
+                        «hoy me siento pesado/a» o «no sé qué me pasa, pero necesito
+                        hablar». También puedes escribirlo en un mensaje o en una nota
+                        si decirlo en voz alta se te hace difícil.
+                    </p>
+                </details>
+
+                <details>
+                    <summary>Cómo identificar a una persona de confianza</summary>
+                    <p>
+                        Suele ser alguien que te escucha sin burlarse, que no minimiza lo
+                        que sientes y que respeta lo que le cuentas. Puede ser un familiar,
+                        una amistad, un docente o alguien de orientación escolar. Si una
+                        persona no te hace sentir seguro/a, puedes probar con otra.
+                    </p>
+                </details>
+
+                <details>
+                    <summary>Cómo poner límites personales</summary>
+                    <p>
+                        Un límite es decir con claridad qué te hace daño y qué necesitas.
+                        Puedes usar frases cortas: «eso no me gusta», «hoy no puedo» o
+                        «prefiero no hablar de eso». Poner un límite no te hace una mala
+                        persona.
+                    </p>
+                </details>
+
+                <details>
+                    <summary>Cuándo puede ser buena idea buscar ayuda profesional</summary>
+                    <p>
+                        Cuando lo que sientes dura mucho tiempo, te cuesta hacer tu vida
+                        diaria (dormir, comer, estudiar, convivir), o sientes que ya no
+                        puedes más con esto. No necesitas estar en crisis para pedir apoyo:
+                        también sirve hablar antes de que todo pese demasiado.
+                    </p>
+                </details>
+            </div>
+        </section>
+
+        <!-- AYUDA URGENTE -->
+        <section class="ayuda" id="ayuda">
+            <div class="ayuda-texto">
+                <h2>Si estás en peligro o piensas en hacerte daño, pide ayuda ahora.</h2>
+                <p>
+                    EspacioPaTodos es una plataforma informativa y de orientación. No
+                    sustituye la atención psicológica profesional ni los servicios
+                    de emergencia. Si necesitas ayuda urgente, estos servicios existen para ti.
+                </p>
+            </div>
+
+            <ul class="ayuda-lista">
+                <li>
+                    <a href="tel:911">
+                        <span class="ayuda-numero">911</span>
+                        <span class="ayuda-detalle">Emergencias en México</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="tel:8009112000">
+                        <span class="ayuda-numero">800 911 2000</span>
+                        <span class="ayuda-detalle">Línea de la Vida: gratuita, las 24 horas, todos los días</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="tel:+525552598121">
+                        <span class="ayuda-numero">55 5259 8121</span>
+                        <span class="ayuda-detalle">SAPTEL: apoyo psicológico en crisis, las 24 horas</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="pie-pagina">
+        <a href="#inicio" class="logo" aria-label="EspacioPaTodos, volver arriba">
+            <svg class="logo-alien" viewBox="-70 -140 140 200" aria-hidden="true">
+                <path d="M-22,-76 Q-34,-112 -52,-126 M22,-76 Q34,-112 52,-126" stroke="#6FF2A9" stroke-width="9" fill="none" stroke-linecap="round"/>
+                <path d="M0,-88 C58,-88 82,-34 58,16 C42,50 -42,50 -58,16 C-82,-34 -58,-88 0,-88Z" fill="#6FF2A9"/>
+                <ellipse cx="-30" cy="-8" rx="15" ry="24" transform="rotate(20 -30 -8)" fill="#091329"/>
+                <ellipse cx="30" cy="-8" rx="15" ry="24" transform="rotate(-20 30 -8)" fill="#091329"/>
+            </svg>
+            <span>Espacio<b>PaTodos</b></span>
+        </a>
+        <p>Un lugar para comprenderte y encontrar apoyo.</p>
+        <p class="copyright">© 2026 EspacioPaTodos. Proyecto escolar.</p>
+    </footer>
+
+    <!-- Botón flotante de ayuda -->
+    <button type="button" class="ayuda-flotante" id="abrir-ayuda">Necesito ayuda ahora</button>
+
+    <dialog class="dialogo-ayuda" id="dialogo-ayuda" aria-labelledby="dialogo-titulo">
+        <h2 id="dialogo-titulo">No estás solo ni sola</h2>
+        <p>Si estás en peligro o necesitas hablar con alguien ahora, llama:</p>
+        <ul>
+            <li><a href="tel:911"><strong>911</strong> Emergencias</a></li>
+            <li><a href="tel:8009112000"><strong>800 911 2000</strong> Línea de la Vida, 24 horas</a></li>
+            <li><a href="tel:+525552598121"><strong>55 5259 8121</strong> SAPTEL, 24 horas</a></li>
+        </ul>
+        <button type="button" class="boton-principal" id="cerrar-ayuda">Cerrar</button>
+    </dialog>
+</body>
+</html>

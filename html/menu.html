@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#091329">
+    <title>Mi espacio — EspacioPaTodos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <script src="js/menu.js" defer></script>
+</head>
+
+<body>
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+    
+    <header class="encabezado encabezado-app">
+        <a href="index.html" class="logo" aria-label="EspacioPaTodos, ir a la página de inicio">
+            <svg class="logo-alien" viewBox="-70 -140 140 200" aria-hidden="true">
+                <path d="M-22,-76 Q-34,-112 -52,-126 M22,-76 Q34,-112 52,-126" stroke="#6FF2A9" stroke-width="9" fill="none" stroke-linecap="round"/>
+                <path d="M0,-88 C58,-88 82,-34 58,16 C42,50 -42,50 -58,16 C-82,-34 -58,-88 0,-88Z" fill="#6FF2A9"/>
+                <ellipse cx="-30" cy="-8" rx="15" ry="24" transform="rotate(20 -30 -8)" fill="#091329"/>
+                <ellipse cx="30" cy="-8" rx="15" ry="24" transform="rotate(-20 30 -8)" fill="#091329"/>
+            </svg>
+            <span>Espacio<b>PaTodos</b></span>
+        </a>
+
+        <nav class="navegacion navegacion-app" aria-label="Navegación de tu espacio">
+            <a href="menu.html" aria-current="true">Mi espacio</a>
+            <a href="index.html#explorar">Explorar temas</a>
+            <a href="index.html#recursos">Recursos</a>
+            <a href="index.html#ayuda">Ayuda urgente</a>
+            <a href="login.html" id="boton-salir">Cerrar sesión</a>
+        </nav>
+    </header>
+
+    <main class="espacio" id="contenido">
+
+        <section class="bienvenida">
+            <h1 id="saludo" aria-live="polite">Bienvenido/a a tu espacio.</h1>
+            <h1>Bienvenido/a a tu espacio.</h1>
+            <p>Aquí nadie te apura. Elige lo que necesites hoy, o no elijas nada y solo quédate un rato.</p>
+            
+        </section>
+
+        <div class="cabina">
+
+            <!-- Ejercicio de respiración -->
+            <section class="respira" aria-labelledby="titulo-respira">
+                <h2 id="titulo-respira">Cabina de calma</h2>
+                <p>Una respiración lenta: inhala 4 segundos y suelta el aire durante 6.</p>
+
+                <div class="orbe-zona" aria-hidden="true">
+                    <div class="orbe" id="orbe" data-fase="reposo">
+                        <span class="orbe-texto" id="orbe-texto">Listo/a</span>
+                    </div>
+                </div>
+
+                <button type="button" class="boton-principal" id="respira-boton">Empezar</button>
+                <p class="respira-estado" id="respira-estado" role="status"></p>
+                <p class="respira-nota">Si te mareas o te incomoda, detente y respira con normalidad.</p>
+            </section>
+
+            <!-- Chequeo del momento -->
+            <section class="chequeo" aria-labelledby="titulo-chequeo">
+                <h2 id="titulo-chequeo">¿Cómo vienes hoy?</h2>
+                <p>Elige lo que más se parezca. Puedes cambiarlo cuando quieras.</p>
+
+                <div class="chequeo-opciones" role="group" aria-label="Estados de ánimo">
+                    <button type="button" class="chip" data-estado="tranquilo" aria-pressed="false">Tranquilo/a</button>
+                    <button type="button" class="chip" data-estado="cansado" aria-pressed="false">Cansado/a</button>
+                    <button type="button" class="chip" data-estado="triste" aria-pressed="false">Triste</button>
+                    <button type="button" class="chip" data-estado="ansioso" aria-pressed="false">Con ansiedad</button>
+                    <button type="button" class="chip" data-estado="enojado" aria-pressed="false">Enojado/a</button>
+                    <button type="button" class="chip" data-estado="nose" aria-pressed="false">No sé</button>
+                </div>
+
+                <div class="chequeo-respuesta" id="chequeo-respuesta" aria-live="polite">
+                    <p class="chequeo-vacio">Aquí aparecerá un mensaje para ti.</p>
+                </div>
+
+                <p class="chequeo-nota">
+                    Esto no se guarda en ningún lado y no es un diagnóstico.
+                </p>
+            </section>
+        </div>
+
+        <!-- Atajos -->
+        <section class="atajos" aria-labelledby="titulo-atajos">
+            <h2 id="titulo-atajos">¿A dónde quieres ir?</h2>
+
+            <ul class="atajos-lista">
+                <li>
+                    <a href="index.html#explorar">
+                        <span class="atajo-titulo">Explorar por tema</span>
+                        <span class="atajo-texto">Elige un planeta del mapa y lee una primera guía sobre lo que estás viviendo.</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html#recursos">
+                        <span class="atajo-titulo">Guías breves</span>
+                        <span class="atajo-texto">Cómo expresar lo que sientes, poner límites o saber cuándo pedir ayuda profesional.</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html#ayuda">
+                        <span class="atajo-titulo">Necesito ayuda ahora</span>
+                        <span class="atajo-texto">Teléfonos de emergencia y de apoyo emocional, gratuitos y de atención inmediata.</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Lo que viene -->
+        <section class="pronto" aria-labelledby="titulo-pronto">
+            <h2 id="titulo-pronto">Lo que viene a tu espacio</h2>
+            <p>Todavía no están listas. Las iremos sumando poco a poco:</p>
+            <ul>
+                <li>Guardar tus recursos favoritos</li>
+                <li>Ejercicios de reflexión y autocuidado</li>
+                <li>Preferencias básicas de tu cuenta</li>
+            </ul>
+        </section>
+
+        <aside class="aviso-ayuda">
+            <p>
+                <strong>Recuerda:</strong> EspacioPaTodos ofrece información y orientación;
+                no sustituye la atención profesional. Si estás en peligro, llama al
+                <a href="tel:911">911</a>. Para hablar con alguien ahora, la Línea de la Vida
+                es gratuita y atiende las 24 horas: <a href="tel:8009112000">800 911 2000</a>.
+            </p>
+        </aside>
+    </main>
+
+    <footer class="pie-pagina">
+        <a href="index.html" class="logo" aria-label="EspacioPaTodos, ir a la página de inicio">
+            <span>Espacio<b>PaTodos</b></span>
+        </a>
+        <p class="copyright">© 2026 EspacioPaTodos. Proyecto escolar.</p>
+    </footer>
+</body>
+</html>

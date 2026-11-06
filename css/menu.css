@@ -1,0 +1,163 @@
+/* ==========================================================
+   EspacioPaTodos · Estilos del menú principal (Mi espacio)
+   Se carga DESPUÉS de styles.css y reutiliza sus variables.
+   ========================================================== */
+
+.encabezado-app { flex-wrap: wrap; }
+.navegacion-app { flex-wrap: wrap; margin-inline: 0; gap: .5rem 1.5rem; }
+
+.espacio {
+    max-width: var(--ancho);
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+}
+
+/* ---------- Bienvenida ---------- */
+.bienvenida h1 {
+    font-size: clamp(2.6rem, 7vw, 5.2rem);
+    line-height: .96;
+    letter-spacing: -0.035em;
+    max-width: 14ch;
+}
+.bienvenida p { margin-top: 1.25rem; font-size: 1.2rem; color: rgba(245,245,255,.88); }
+
+/* ---------- Cabina: respiración + chequeo ---------- */
+.cabina {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 2rem;
+    align-items: stretch;
+    margin-top: 3rem;
+}
+
+.respira,
+.chequeo { padding: 2.25rem; }
+.respira h2,
+.chequeo h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); margin-bottom: .6rem; }
+
+.respira {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background:
+        radial-gradient(ellipse at 50% 35%, rgba(111,242,169,.16), transparent 65%),
+        var(--profundo);
+    border: 2px solid rgba(111,242,169,.45);
+    border-radius: 2.5rem .5rem 2.5rem .5rem;
+}
+
+.orbe-zona {
+    width: 100%;
+    height: 17rem;
+    display: grid;
+    place-items: center;
+}
+
+.orbe {
+    width: 9.5rem;
+    height: 9.5rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: radial-gradient(circle at 32% 28%, #e4daff, #b5a0ff 55%, #6ff2a9 130%);
+    box-shadow: 0 0 40px rgba(181,160,255,.45);
+    transform: scale(1);
+}
+.orbe[data-fase="inhala"] { transform: scale(1.65); transition: transform 4s ease-in-out; box-shadow: 0 0 70px rgba(111,242,169,.6); }
+.orbe[data-fase="exhala"] { transform: scale(1);    transition: transform 6s ease-in-out; }
+
+.orbe-texto {
+    font-family: var(--fuente-titulos);
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: var(--vacio);
+}
+
+.respira-estado { margin-top: 1rem; min-height: 1.6em; font-weight: 700; color: var(--verde); }
+.respira-nota { margin-top: .25rem; font-size: .95rem; color: rgba(245,245,255,.72); }
+
+.chequeo {
+    background: var(--luna);
+    color: var(--tinta-luna);
+    border-radius: .5rem 2.5rem .5rem 2.5rem;
+}
+
+.chequeo-opciones { display: flex; flex-wrap: wrap; gap: .6rem; margin: 1.25rem 0; }
+
+.chequeo .chip { color: var(--tinta-luna); border-color: #4f8a72; }
+.chequeo .chip:hover { background: rgba(15,90,66,.12); }
+.chequeo .chip[aria-pressed="true"] {
+    background: var(--verde-oscuro);
+    border-color: var(--verde-oscuro);
+    color: #fff;
+}
+
+.chequeo-respuesta {
+    min-height: 9rem;
+    padding: 1.1rem 1.25rem;
+    background: rgba(15,90,66,.1);
+    border-left: 4px solid var(--verde-oscuro);
+    border-radius: 0 1rem 1rem 0;
+}
+.chequeo-respuesta p + p,
+.chequeo-respuesta p + a { margin-top: .7rem; }
+.chequeo-respuesta a { display: inline-block; font-weight: 700; color: var(--verde-oscuro); }
+.chequeo-mensaje { font-family: var(--fuente-titulos); font-weight: 500; font-size: 1.25rem; line-height: 1.4; }
+.chequeo-respuesta.cambia { animation: aparecer .35s ease-out; }
+.chequeo-nota { margin-top: 1rem; font-size: .95rem; color: #2f5446; }
+
+/* ---------- Atajos ---------- */
+.atajos { margin-top: 5rem; }
+.atajos h2,
+.pronto h2 { font-size: clamp(2rem, 4.5vw, 3.2rem); margin-bottom: 1.5rem; }
+
+.atajos-lista { list-style: none; margin: 0; padding: 0; border-top: 2px solid rgba(168,215,255,.25); }
+.atajos-lista li { border-bottom: 2px solid rgba(168,215,255,.25); }
+
+.atajos-lista a {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: .5rem 2rem;
+    align-items: baseline;
+    padding: 1.5rem 0 1.5rem 1rem;
+    text-decoration: none;
+    border-left: 5px solid transparent;
+    transition: border-color .2s, padding-left .2s, background-color .2s;
+}
+.atajos-lista a:hover { border-left-color: var(--verde); padding-left: 1.5rem; background: rgba(111,242,169,.06); }
+
+.atajo-titulo { font-family: var(--fuente-titulos); font-weight: 800; font-size: clamp(1.5rem, 3vw, 2.1rem); letter-spacing: -0.02em; line-height: 1.1; }
+.atajo-texto { color: rgba(245,245,255,.85); }
+
+/* ---------- Lo que viene ---------- */
+.pronto { margin-top: 5rem; }
+.pronto ul { list-style: none; margin: 1.25rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: .75rem; }
+.pronto li {
+    padding: .55rem 1.1rem;
+    border: 2px dashed rgba(181,160,255,.6);
+    border-radius: 999px;
+    color: rgba(245,245,255,.85);
+}
+
+/* ---------- Aviso ---------- */
+.aviso-ayuda {
+    margin-top: 5rem;
+    padding: 1.5rem 1.75rem;
+    border: 2px solid var(--verde);
+    border-radius: 2rem .5rem 2rem .5rem;
+    background: radial-gradient(ellipse at 0% 0%, rgba(111,242,169,.14), transparent 60%);
+}
+.aviso-ayuda a { font-weight: 700; color: var(--verde); }
+
+/* ---------- Adaptación ---------- */
+@media (max-width: 62rem) {
+    .cabina { grid-template-columns: 1fr; }
+    .atajos-lista a { grid-template-columns: 1fr; }
+    .atajos, .pronto, .aviso-ayuda { margin-top: 3.5rem; }
+}
+
+@media (max-width: 46rem) {
+    .respira, .chequeo { padding: 1.5rem; }
+    .orbe-zona { height: 14rem; }
+    .orbe { width: 7.5rem; height: 7.5rem; }
+}
